@@ -1,0 +1,14 @@
+addDefaultCharset UTF-8
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+ 
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+
+  RewriteEngine On
+  IndexIgnore */*
+  RewriteRule ^([^/].*)?$ /web/$1
+</IfModule>
